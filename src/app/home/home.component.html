@@ -1,0 +1,29 @@
+<div class = "container">
+    <div class = "row">
+        <!--About Me-->
+        <div class = "col-lg shadow border m-1">
+            <div class = "text-center">
+                <h2>About Me</h2>
+                <img src = "assets/street lights.png" alt = "Profile Picture" width = "256" height = "256" class = "rounded-circle">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <!--Featured Project-->
+        <div class = "col-lg shadow border m-1">
+            <div class = "text-center">
+                <h2>Featured Project</h2>
+                <h4>{{featuredProject.name}}</h4>
+            </div>
+
+            <carousel>
+                <div *ngFor="let picture of featuredProject.pictures">
+                    <slide><img src={{picture}} alt="slide" style="display: block; width: 100%"></slide>
+                </div>
+            </carousel>
+
+            <p class="mt-2">{{featuredProject.summary}}</p>
+            <p>Visit the Portfolio section to learn more!</p>
+        </div>
+    </div>
+</div>

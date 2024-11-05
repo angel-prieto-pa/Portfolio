@@ -1,0 +1,150 @@
+<div class="container text-center">
+    <button class="btn btn-primary mb-5 shadow border" (click)="DownloadFile()">Download PDF Résumé</button>
+
+
+    <div class="pb-2">
+        <accordion class="shadow" [isAnimated]="true">
+            <accordion-group [(isOpen)]="isWorkExperienceOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Work Experience</div>
+                    
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isWorkExperienceOpen" style="color: white;">></div>
+                        <div *ngIf="isWorkExperienceOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Software Engineer</h2>
+                    <h3 class="text-primary">Sample Company</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                        <li>Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis.</li>
+                        <li>Iaculis eu non diam phasellus vestibulum lorem sed risus.</li>
+                        <li>Fusce id velit ut tortor pretium.</li>
+                        <li>Varius sit amet mattis vulputate enim nulla aliquet porttitor.</li>
+                    </ul>
+                    <hr />
+                </div>
+            
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Manager</h2>
+                    <h3 class="text-primary">Warehouse</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                        <li>Nisi rhoncus mattis rhoncus urna.</li>
+                        <li>Vulvus morbi enim nunc faucibus.</li>
+                        <li>Egestas sed sed risus pretium quam vulputate dignissim suspendisse.</li>
+                        <li>Fusce id velit ut tortor pretium.</li>
+                    </ul>
+                    <hr />
+                </div>
+            
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Warehouse Associate</h2>
+                    <h3 class="text-primary">Warehouse</h3>
+                    <ul>
+                        <li>Convallis tellus id interdum velit laoreet.</li>
+                        <li>Eu tincidunt tortor aliquam nulla facilisi cras.</li>
+                        <li>Interdum varius sit amet mattis vulputate enim nulla aliquet.</li>
+                        <li>Consectetur lorem donec massa sapien faucibus et molestie ac feugiat.</li>
+                        <li>Ornare massa eget egestas purus viverra accumsan in.</li>
+                    </ul>
+                </div>
+            </accordion-group>
+    
+            <accordion-group [(isOpen)]="isEducationOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Education</div>
+                    
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isEducationOpen" style="color: white;">></div>
+                        <div *ngIf="isEducationOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div style="text-align: left;">
+                    <h2 class="mb-0">Bachelor's of Science in Computer Science</h2>
+                    <h3 class="text-primary">Purdue University</h3>
+                    <ul>
+                        <li>Graduated from Purdue University in May 2019</li>
+                        <li>Graduated with a 3.8 GPA</li>
+                        <li>Participated in extracurricular clubs such as the engineering club, the robotics team, and more!</li>
+                    </ul>
+                </div>
+            </accordion-group>
+    
+            <accordion-group [(isOpen)]="isCertificationsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Certifications</div>
+                    
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isCertificationsOpen" style="color: white;">></div>
+                        <div *ngIf="isCertificationsOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div style="text-align: left;">
+                    <h3>Microsoft Azure Data Fundamentals (DP-900)</h3>
+                    <ul>
+                        <li>Obtained August 2020</li>
+                        <li>#98293402839</li>
+                    </ul>
+                    
+                    <h3>Google IT Support Specialist</h3>
+                    <ul>
+                        <li>Obtained December 2018</li>
+                        <li>#32f90bh39</li>
+                    </ul>
+                </div>
+            </accordion-group>
+    
+            <accordion-group [(isOpen)]="isSkillsOpen">
+                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
+                    <div style="visibility: hidden;">></div>
+                    <div class="btn-link">Skills</div>
+                    
+                    <div style="width: 10.95px;">
+                        <div *ngIf="!isSkillsOpen" style="color: white;">></div>
+                        <div *ngIf="isSkillsOpen" style="color: white;">v</div>
+                    </div>
+                </button>
+
+                <div class="row" style="text-align: left;">
+                    <div class="col">
+                        <h3>Programming Languages:</h3>
+                        <ul>
+                            <li>C#</li>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col">
+                        <h3>Frameworks:</h3>
+                        <ul>
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>ASP.NET</li>
+                            <li>Node.JS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col">
+                        <h3>Other Skills:</h3>
+                        <ul>
+                            <li>Source Control via Git</li>
+                            <li>MVC Architecture</li>
+                            <li>Agile Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div>
+    
+</div>
