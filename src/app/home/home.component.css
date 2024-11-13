@@ -1,0 +1,28 @@
+.text-center {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.m-1 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.image-about {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title-featured {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.image-featured {
+    padding-bottom: 20px;
+}
+
+.summary-featured {
+    margin-left: 20px;
+    margin-right: 20px;
+}

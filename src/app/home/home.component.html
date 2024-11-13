@@ -1,29 +1,30 @@
 <div class = "container">
     <div class = "row">
         <!--About Me-->
-        <div class = "col-lg shadow border m-1">
-            <div class = "text-center">
-                <h2>About Me</h2>
-                <img src = "assets/street lights.png" alt = "Profile Picture" width = "256" height = "256" class = "rounded-circle">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="col-lg shadow border m-1">
+            <div class="text-center">
+                <h2 class="text-about"><u>About Me</u></h2>
+                <img src = "assets/img/profile.png" alt = "Profile Picture" width = "256" height = "296" class = "rounded-circle image-about">
+                <h4 class="text-about">Career Objective</h4>
+                <p class="text-about">I am an Electrical Engineering and Computer Science graduate with a strong foundation in software development, programming, and analytical problem-solving. I am seeking a software engineering role that challenges me to apply and build upon my technical skills while collaborating on impactful projects. My goal is to contribute effectively to a results-driven team, delivering solutions that are both innovative and efficient. I'm eager to bring my dedication and enthusiasm for technology to an environment where I can grow and make meaningful contributions.</p>
             </div>
         </div>
 
         <!--Featured Project-->
         <div class = "col-lg shadow border m-1">
             <div class = "text-center">
-                <h2>Featured Project</h2>
-                <h4>{{featuredProject.name}}</h4>
+                <h2><u>Featured Project</u></h2>
+                <h4 class="title-featured"><i>{{featuredProject.name}}</i></h4>
             </div>
 
             <carousel>
                 <div *ngFor="let picture of featuredProject.pictures">
-                    <slide><img src={{picture}} alt="slide" style="display: block; width: 100%"></slide>
+                    <slide class="image-featured"><img src={{picture}} alt="slide" style="display: block; width: 75%; margin-left: auto; margin-right: auto;"></slide>
                 </div>
             </carousel>
 
-            <p class="mt-2">{{featuredProject.summary}}</p>
-            <p>Visit the Portfolio section to learn more!</p>
+            <p class="mt-2 text-center" style="margin-left: 20px; margin-right: 20px;">{{featuredProject.summary}}</p>
+            <p class="text-center"><i>Learn more in the <a routerLink = "/portfolio">portfolio</a> section.</i></p>
         </div>
     </div>
 </div>
