@@ -1,7 +1,5 @@
 <div class="container text-center">
-    <button class="btn btn-primary mb-5 shadow border" (click)="DownloadFile()">Download PDF Résumé</button>
-
-
+    <button class="btn btn-primary shadow border" (click)="DownloadFile()">Download PDF Résumé</button>
     <div class="pb-2">
         <accordion class="shadow" [isAnimated]="true">
             <accordion-group [(isOpen)]="isWorkExperienceOpen">
@@ -15,43 +13,31 @@
                     </div>
                 </button>
 
-                <div style="text-align: left;">
-                    <h2 class="mb-0">Software Engineer</h2>
-                    <h3 class="text-primary">Sample Company</h3>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                        <li>Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis.</li>
-                        <li>Iaculis eu non diam phasellus vestibulum lorem sed risus.</li>
-                        <li>Fusce id velit ut tortor pretium.</li>
-                        <li>Varius sit amet mattis vulputate enim nulla aliquet porttitor.</li>
-                    </ul>
-                    <hr />
+                <div class="accordion-inner">
+                    <div style="text-align: left;">
+                        <h2 class="mb-0">Memory Operations Amplification Teaching Tool (MOAT)</h2>
+                        <h3 class="text-primary"><i>Full Stack Mobile Application Developer, iOS Team</i></h3>
+                        <ul>
+                            <li>Contributed to project development by researching iOS application best practices, collaborating with senior software engineers, and working closely with peers to enhance application efficiency, compatibility, and feature set.</li>
+                            <li>Led front-end development of mobile application interfaces, including navigation, account settings, and game flow (initiation and conclusion), based on designs from Figma.</li>
+                            <li>Leveraged object-oriented design principles (modularity, reusability, extensibility) with Model-View-ViewModel (MVVM) architecture to future-proof code, simplify page development,</li>
+                            <li>Assisted in back-end development with Realtime Database, supporting user data storage, game lobby creation, and cross-device functionality across various operating systems.</li>
+                            <li>Managed version control using Git and collaborated with a team of three to merge code and integrate the iOS application on GitHub.</li>
+                        </ul>
+                        <hr />
+                    </div>
+                
+                    <div class="accordion-text" style="text-align: left;">
+                        <h2 class="mb-0">Berkeley High School</h2>
+                        <h3 class="text-primary">Apprentice Math Teacher</h3>
+                        <ul>
+                            <li>Led a ninth-grade math class, where I created, implemented, and delivered engaging lesson plans aligned with curriculum objectives, while adapting content to meet students' skill levels and fostering a supportive learning environment.</li>
+                            <li>Assessed student progress and adjusted instructional approaches based on individual and class-wide needs, supporting overall academic growth.</li>
+                            <li>Collaborated with the school’s Math Department Lead to support students with IEPs, tailoring lesson plans and instructional strategies to meet individual learning needs and ensure inclusivity in the classroom.</li>
+                        </ul>
+                    </div>
                 </div>
             
-                <div style="text-align: left;">
-                    <h2 class="mb-0">Manager</h2>
-                    <h3 class="text-primary">Warehouse</h3>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                        <li>Nisi rhoncus mattis rhoncus urna.</li>
-                        <li>Vulvus morbi enim nunc faucibus.</li>
-                        <li>Egestas sed sed risus pretium quam vulputate dignissim suspendisse.</li>
-                        <li>Fusce id velit ut tortor pretium.</li>
-                    </ul>
-                    <hr />
-                </div>
-            
-                <div style="text-align: left;">
-                    <h2 class="mb-0">Warehouse Associate</h2>
-                    <h3 class="text-primary">Warehouse</h3>
-                    <ul>
-                        <li>Convallis tellus id interdum velit laoreet.</li>
-                        <li>Eu tincidunt tortor aliquam nulla facilisi cras.</li>
-                        <li>Interdum varius sit amet mattis vulputate enim nulla aliquet.</li>
-                        <li>Consectetur lorem donec massa sapien faucibus et molestie ac feugiat.</li>
-                        <li>Ornare massa eget egestas purus viverra accumsan in.</li>
-                    </ul>
-                </div>
             </accordion-group>
     
             <accordion-group [(isOpen)]="isEducationOpen">
@@ -65,40 +51,22 @@
                     </div>
                 </button>
 
-                <div style="text-align: left;">
-                    <h2 class="mb-0">Bachelor's of Science in Computer Science</h2>
-                    <h3 class="text-primary">Purdue University</h3>
-                    <ul>
-                        <li>Graduated from Purdue University in May 2019</li>
-                        <li>Graduated with a 3.8 GPA</li>
-                        <li>Participated in extracurricular clubs such as the engineering club, the robotics team, and more!</li>
-                    </ul>
-                </div>
-            </accordion-group>
-    
-            <accordion-group [(isOpen)]="isCertificationsOpen">
-                <button class="btn btn-block justify-content-between d-flex w-100" accordion-heading>
-                    <div style="visibility: hidden;">></div>
-                    <div class="btn-link">Certifications</div>
-                    
-                    <div style="width: 10.95px;">
-                        <div *ngIf="!isCertificationsOpen" style="color: white;">></div>
-                        <div *ngIf="isCertificationsOpen" style="color: white;">v</div>
+                <div class="accordion-inner">
+                    <div style="text-align: left;">
+                        <h2 class="mb-0">University of California, Berkeley</h2>
+                        <h3 class="text-primary"><i>Bachelor of Science in Electrical Engineering and Computer Science</i></h3>
+                        <h5><i>Notable Awards: </i><a href="https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships/regents-and-chancellors-scholarship/">Regents’ and Chancellor’s Scholarship</a>, <a href="https://www2.eecs.berkeley.edu/Students/Awards/7/">Art and Mary Fong Undergraduate Scholarship</a></h5>
+                        <h5>Relevant Coursework</h5>
+                        <ul>
+                            <li>The Structure and Interpretation of Computer Programs</li>
+                            <li>Data Structures</li>
+                            <li>Great Ideas of Computer Architecture / Machine Structures</li>
+                            <li>Efficient Algorithms and Intractable Problems</li>
+                            <li>Introduction to Database Systems</li>
+                            <li>Introduction to Artificial Intelligence</li>
+                        </ul>
+                        <h3 class="text-primary"><i>Minor in CalTeach Science and Math Education</i></h3>
                     </div>
-                </button>
-
-                <div style="text-align: left;">
-                    <h3>Microsoft Azure Data Fundamentals (DP-900)</h3>
-                    <ul>
-                        <li>Obtained August 2020</li>
-                        <li>#98293402839</li>
-                    </ul>
-                    
-                    <h3>Google IT Support Specialist</h3>
-                    <ul>
-                        <li>Obtained December 2018</li>
-                        <li>#32f90bh39</li>
-                    </ul>
                 </div>
             </accordion-group>
     
@@ -113,35 +81,48 @@
                     </div>
                 </button>
 
-                <div class="row" style="text-align: left;">
+                <div class="row accordion-inner" style="text-align: left;">
                     <div class="col">
-                        <h3>Programming Languages:</h3>
+                        <h3>Languages:</h3>
                         <ul>
-                            <li>C#</li>
-                            <li>TypeScript</li>
+                            <li>Swift</li>
                             <li>Python</li>
+                            <li>Javascript</li>
+                            <li>HTML/CSS</li>
+                            <li>Typescript</li>
+                            <li>SQL</li>
                             <li>Java</li>
+                            <li>C</li>
                         </ul>
                     </div>
-                    
+                        
                     <div class="col">
                         <h3>Frameworks:</h3>
                         <ul>
+                            <li>UIKit</li>
                             <li>Angular</li>
-                            <li>React</li>
-                            <li>ASP.NET</li>
-                            <li>Node.JS</li>
+                            <li>Bootstrap</li>
                         </ul>
                     </div>
-                    
+
                     <div class="col">
-                        <h3>Other Skills:</h3>
+                        <h3>Libraries:</h3>
+                        <ul>
+                            <li>Firebase</li>
+                            <li>GoogleMobileAds</li>
+                            <li>PyTorch</li>
+                            <li>Matplotlib</li>
+                        </ul>
+                    </div>
+                        
+                    <!-- <div class="col"> -->
+                        <!-- <h3>Other Skills:</h3>
                         <ul>
                             <li>Source Control via Git</li>
                             <li>MVC Architecture</li>
                             <li>Agile Development</li>
-                        </ul>
-                    </div>
+                        </ul> -->
+                    <!-- </div> -->
                 </div>
             </accordion-group>
         </accordion>

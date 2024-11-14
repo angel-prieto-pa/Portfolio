@@ -20,8 +20,8 @@ export class ResumeComponent {
   DownloadFile() {
     const link = this.renderer.createElement('a');
     link.setAttribute('target', '_blank');
-    link.setAttribute('href', '/assets/Resume.pdf');
-    link.setAttribute('download', 'Resume.pdf');
+    link.setAttribute('href', '/assets/files/Angel Prieto - Online Software Engineering Résumé.pdf');
+    link.setAttribute('download', 'Angel Prieto - Online Software Engineering Résumé');
     link.click();
     link.remove();
   }

@@ -1,7 +1,17 @@
+.btn-primary {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
 accordion-group::ng-deep .btn-link {
     color: white;
 }
 
 accordion-group::ng-deep .card-header {
     background-color: #007bff;
+}
+
+.accordion-inner {
+    margin-left: 20px;
+    margin-right: 20px;
 }
