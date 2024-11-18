@@ -15,8 +15,10 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +33,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     ResumeComponent,
     ContactComponent,
     ProjectCardComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     CarouselModule.forRoot(),
     CollapseModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     AccordionModule.forRoot()
   ],
   providers: [],
