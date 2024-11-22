@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MailService } from '../_services/mail.service';
 
 
@@ -22,7 +22,7 @@ export class ContactFormComponent {
   contactFormValues = {
     name: '',
     email: '',
-    body: '',
+    message: '',
   };
 
   get alertColor() {
@@ -32,16 +32,16 @@ export class ContactFormComponent {
   hideAlert() {
     setTimeout(() => {
       this.showAlert = false;
-    }, 5000);
+    }, 500);
   }
   
   async submitEmail(contactForm: NgForm) {
     this.onSubmit = true;
     // -- set formData values
     let formData: FormData = new FormData();
-    formData.append('name', this.contactFormValues.name);
     formData.append('email', this.contactFormValues.email);
-    formData.append('body', this.contactFormValues.body);
+    formData.append('name', this.contactFormValues.name);
+    formData.append('message', this.contactFormValues.message);
     // -- email customization
     formData.append('access_key', "040c35d5-6010-4d33-b65a-bf83fcac15d0");
     formData.append('subject', 'Email Support From Your Site');
@@ -58,12 +58,14 @@ export class ContactFormComponent {
       contactForm.reset();
     } catch (err) {
       // handle error
+      console.log('test')
       this.alertMessage = 'Something went wrong, try again later!';
       this.color = 'red';
     }
     // -- reset submit and hide alert
     this.onSubmit = false;
     this.showAlert = true;
+    console.log("here")
     this.hideAlert();
   }
 }

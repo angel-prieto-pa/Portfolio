@@ -18,7 +18,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 
 

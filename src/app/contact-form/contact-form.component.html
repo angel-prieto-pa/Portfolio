@@ -1,93 +1,37 @@
-<!-- Form -->
-<div class="mt-8">
-    <form
-      class="flex flex-col gap-3"
-      #contactForm="ngForm"
-      (ngSubmit)="submitEmail(contactForm)"
-    >
-      <!-- Name field -->
-      <div>
-        <input
-          name="name"
-          [(ngModel)]="contactFormValues.name"
-          #name="ngModel"
-          type="text"
-          placeholder="Full Name"
-          class="w-full p-2 border border-gray-200 rounded-md"
-          required
-          minlength="2"
-        />
-        <!-- input error message -->
-        <p
-          class="ml-1 text-red-400 text-sm"
-          *ngIf="name.errors && name.touched && name.dirty"
-        >
-          name is required
-        </p>
-      </div>
-      <!-- email field -->
-      <div>
-        <input
-          name="email"
-          [(ngModel)]="contactFormValues.email"
-          #email="ngModel"
-          type="email"
-          placeholder="Email"
-          class="w-full p-2 border border-gray-200 rounded-md"
-          required
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-        />
-        <!-- input error message -->
-        <p
-          class="ml-1 text-red-400 text-sm"
-          *ngIf="email.errors && email.touched && email.dirty"
-        >
-          invalid email
-        </p>
-</div>
-      <!-- body field -->
-      <div>
-        <textarea
-          name="body"
-          [(ngModel)]="contactFormValues.body"
-          #body="ngModel"
-          cols="30"
-          rows="10"
-          class="w-full p-2 border border-gray-200 rounded-md"
-          placeholder="Message"
-          required
-          minlength="20"
-        ></textarea>
-        <!-- input error message -->
-        <p
-          class="ml-1 text-red-400 text-sm"
-          *ngIf="body.errors && body.touched && body.dirty"
-        >
-          at least write some words (20 characters length)
-        </p>
-      </div>
-      <!-- Alert -->
-      <div
-        [ngClass]="{
-          hidden: !showAlert
-        }"
-      >
-        <p [ngClass]="alertColor" class="font-semibold">
-          {{ alertMessage }}
-        </p>
-      </div>
-      <!-- submit button -->
-      <button
-        [disabled]="contactForm.invalid || onSubmit"
-        class="p-2 rounded-md font-bold uppercase text-white bg-light-color hover:bg-primary-color transition disabled:opacity-50 disabled:bg-light-color"
-      >
-        <ng-container *ngIf="onSubmit === false; else submittingEmail">
-          send
-        </ng-container>
+<div class="col-md-6 offset-md-3">
+    <form #contactForm="ngForm" (ngSubmit)="submitEmail(contactForm)">
+          
+        <div class="form-group">
+            <label for="mail">Email</label>
+            <input id="email" name="email" type="email" [(ngModel)]="contactFormValues.email" #email="ngModel" class="form-control" placeholder="Enter email" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+            <p class="text-danger text-sm-left" *ngIf="email.errors && email.touched && email.dirty">The email you provided is invalid.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input id="fullname" name="fullnamename" type="text" [(ngModel)]="contactFormValues.name" #name="ngModel" class="form-control" placeholder="Full Name" required minlength="2">
+            <p class="text-danger text-sm-left" *ngIf="name.errors && name.touched && name.dirty">A full name is required.</p>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" [(ngModel)]="contactFormValues.message" #message="ngModel" class="form-control" required minlength="5"></textarea>
+            <p class="text-danger text-sm-left" *ngIf="message.errors && message.touched && message.dirty">Please provide a message of at least 5 characters of length.</p>
+        </div>
+
+        <div [ngClass]="{hidden: !showAlert}">
+            <p [ngClass]="alertColor" class="font-semibold">{{ alertMessage }}</p>
+        </div>
+          
+        <button type="submit" [disabled]="contactForm.invalid || onSubmit" class="btn btn-primary">
+            <ng-container *ngIf="onSubmit === false; else submittingEmail"></ng-container>
+            Submit
+        </button>
+        
         <ng-template #submittingEmail>
-          <!-- <div class="animate-spin">
-            <fa-icon [icon]="iconLoad"></fa-icon>
-          </div> -->
+            <!-- <div class="animate-spin">
+                <fa-icon [icon]="iconLoad"></fa-icon>
+            </div> -->
         </ng-template>
-      </button>
     </form>
+</div>
