@@ -2,16 +2,18 @@
     <div class = "containter">
         <ul class = "nav justify-content-center"> 
             <li class = "nav-item">
-                <a class = "nav-link text-secondary" routerLink = "" routerLinkActive = "text-dark">Home</a>
+                <!-- Router link should be active if router link is blank or '/home'. -->
+                <a class = "nav-link text-secondary" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'text-dark text-decoration-underline': blank.isActive}" routerLink="/home" routerLinkActive="text-dark text text-decoration-underline">Home</a>
+                <a routerLink="/" routerLinkActive #blank="routerLinkActive" style="display: none"></a>
             </li>
             <li>
-                <a class = "nav-link text-secondary" routerLink = "/portfolio" routerLinkActive = "text-dark">Portfolio</a>
+                <a class="nav-link text-secondary" routerLink="/portfolio" routerLinkActive="text-dark text-decoration-underline">Portfolio</a>
             </li>
             <li>
-                <a class = "nav-link text-secondary" routerLink = "/resume" routerLinkActive = "text-dark">Résumé</a>
+                <a class="nav-link text-secondary" routerLink="/resume" routerLinkActive="text-dark text-decoration-underline">Résumé</a>
             </li>
             <li>
-                <a class = "nav-link text-secondary" routerLink = "/contact" routerLinkActive = "text-dark">Contact</a>
+                <a class="nav-link text-secondary" routerLink="/contact" routerLinkActive="text-dark text-decoration-underline">Contact</a>
             </li>
         </ul>
     </div>
