@@ -1,5 +1,5 @@
 <div class = "shadow-sm">
-  <app-header></app-header>
-  <app-nav></app-nav>
+  <app-header *ngIf="validRoute"></app-header>
+  <app-nav *ngIf="validRoute"></app-nav>
 </div>
 <router-outlet></router-outlet>

@@ -6,6 +6,10 @@ export interface Project {
     summary: string;
     description: string;
     projectLink: string;
+    featureHeadings: string[];
+    featureDescriptions: (string | string[])[];
+    highlightHeadings: string[];
+    highlightDescriptions: string[];
     pictures: string[];
     tags: Tag[];
 }

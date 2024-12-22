@@ -1,0 +1,38 @@
+{
+    "minesweeper": {
+        "summary": "Python recreation of the classic Minesweeper game.",
+        "description": "This project is a fully interactive recreation of the classic Minesweeper game, developed in Python. Designed to demonstrate expertise in Python programming, the project integrates game mechanics, logical algorithms, and user interface design.",
+        "projectLink": "https://github.com/angel-prieto-pa/Minesweeper",
+        "features": {
+            "headings": [
+                "Dynamic Gameplay Mechanics",
+                "Efficient Algorithms",
+                "Graphical User Interface (GUI)"
+            ],
+            "descriptions": [
+                [
+                    "An ability to mark cells, allowing users to flag potential mines or tag unknown cells for later review.",
+                    "An active timer tracks how long it takes to complete the game.",
+                    "A bomb counter updates dynamically, showing how many bombs remain based on the number of flags placed.",
+                    "Win and Lose conditions."
+                ],
+                "Automatically clears adjacent safe cells when applicable, ensuring seamless gameplay and reducing repetitive actions.",
+                "A user-friendly interface."
+            ]
+        },
+        "highlights": {
+            "headings": [
+                "Logic and Algorithm Design",
+                "Data Management",
+                "Tkinter Integration",
+                "Scalable Project Structure"
+            ],
+            "descriptions": [
+                "Implemented efficient game logic for generating mines, calculating adjacent mine counts, and handling chain-revealing of safe cells.",
+                "Utilized structured data to store game states, ensuring smooth and responsive gameplay.",
+                "Leveraged Tkinter to create an interactive and visually appealing game interface.",
+                "Organized files and directories for clarity and ease of maintenance."
+            ]
+        }
+    }
+} 

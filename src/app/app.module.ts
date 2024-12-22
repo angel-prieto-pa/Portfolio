@@ -18,7 +18,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -34,7 +34,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ContactComponent,
     ProjectCardComponent,
     ProjectModalComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

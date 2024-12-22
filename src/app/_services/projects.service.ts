@@ -1,14 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../_models/Project';
 import { Tag } from '../_models/Tag';
+import * as projectData from '../../../public/assets/files/projects.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
 
+  // data: any = projectData;  
+
+  title = 'JSONDataExample';
+  products: any = (projectData as any).default;
+
+  constructor(){
+    console.log(projectData);
+  }
+
+  // constructor() {}
+  
   projects: Project[] = [
-    {id: 0, name: "Minesweeper", pictures: this.GetImages("minesweeper", 5), projectLink: "https://github.com/angel-prieto-pa/Minesweeper", summary: "Python recreation of the classic Minesweeper game.", description: "For this project, I recreated the classic Minesweeper game from scratch, analyzing its core features and mechanics to ensure accurate gameplay replication. Full game functionality was developed in Python, utilizing Tkinter to design an interactive user interface for an intuitive player experience.", tags: [Tag.PYTHON]},
+    { 
+      id: 0,
+      name: "Minesweeper",
+      pictures: this.GetImages("minesweeper", 5),
+      projectLink: projectData.minesweeper.projectLink,
+      summary: projectData.minesweeper.summary,
+      description: projectData.minesweeper.description,
+      featureHeadings: projectData.minesweeper.features.headings,
+      featureDescriptions: projectData.minesweeper.features.descriptions,
+      highlightHeadings: projectData.minesweeper.highlights.headings,
+      highlightDescriptions: projectData.minesweeper.highlights.descriptions,
+      tags: [Tag.PYTHON]
+    },
     // {id: 1, name: "Sample Angular App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Fullstack web app developed using Angular and Node.JS", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.NODEJS]},
     // {id: 2, name: "Sample .Net App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Fullstack web app developed using React and ASP.NET", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.REACT ,Tag.CSHARP, Tag.ASPNET]},
     // {id: 3, name: "Web API Project", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Web API Project that was developed for a class project.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.CSHARP, Tag.ASPNET]},
@@ -16,15 +40,13 @@ export class ProjectsService {
     // {id: 5, name: "Mobile App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Mobile app developed in java that tracks the departure and arrival of trains.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.JAVA]}
   ];
 
-  constructor() { }
-
   private GetImages(projectName: string, count: number) : string[] {
 
     let dir = "/assets/img/" + projectName + "/";
     let imgUrls: string[] = [];
 
-    for (let i = 0; i < count; i++) {
-      imgUrls.push(dir + i.toString() + "-" + projectName + ".png");
+    for (let i = 1; i < count; i++) {
+      imgUrls.push(dir + i.toString().padStart(2, "0") + "-" + projectName + ".png");
     }
 
     return imgUrls;

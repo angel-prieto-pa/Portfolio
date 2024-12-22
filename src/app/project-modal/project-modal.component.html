@@ -4,17 +4,52 @@
 </div>
 
 
-<div class="modal-body">
+<div class="modal-body mx-2">
     <carousel>
         <div *ngFor="let picture of project.pictures">
             <slide><img src={{picture}} alt="slide" style="display: block; width: 100%"></slide>
         </div>
     </carousel>
 
-    <h3 class="mt-2">Description</h3>
+    <!-- Description -->
+    <h3 class="my-4">Description</h3>
     <p>{{project.description}}</p>
-    <p>You can find this on Github: <a href={{project.projectLink}} target="_blank">here</a></p>
-    
+
+    <!-- Key Features -->
+    <h3 class="my-4">Key Features</h3>
+
+    <div *ngFor="let feature of project.featureHeadings; let i = index">
+        <ul>
+            <!-- Multiple Features -->
+            <div *ngIf="isArray(project.featureDescriptions[i])">
+                <li><b>{{feature}}: </b></li>
+                <ul>
+                    <li *ngFor="let description of toStringArray(project.featureDescriptions[i])">{{description}}</li>
+                </ul>
+            </div>
+
+            <!-- Single Feature -->
+            <div *ngIf="isString(project.featureDescriptions[i])">
+                <li><b>{{feature}}: </b>{{project.featureDescriptions[i]}}</li>
+            </div>
+        </ul>
+
+    </div>
+
+    <!-- Technical Highlights -->
+    <h3 class="my-4">Technical Highlights</h3>
+    <div *ngFor="let highlight of project.highlightHeadings; let i = index">
+        <ul>
+            <div *ngIf="isString(project.highlightDescriptions[i])">
+                <li><b>{{highlight}}: </b>{{project.highlightDescriptions[i]}}</li>
+            </div>
+        </ul>
+
+    </div>
+
+    <!-- Github Link -->
+    <p class="my-4">Access this project on GitHub: <a href={{project.projectLink}} target="_blank">here</a></p>
+
     <hr>
     <div class="d-flex flex-wrap">
         <div *ngFor="let tag of project.tags">

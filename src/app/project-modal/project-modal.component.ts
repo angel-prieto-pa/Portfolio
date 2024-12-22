@@ -14,4 +14,17 @@ export class ProjectModalComponent {
   constructor(public bsModalRef: BsModalRef) {
 
   }
+
+  isArray(object: any) {
+    return Array.isArray(object);
+  }
+
+  isString(object: any) {
+    return (typeof object === 'string');
+  }
+
+  toStringArray(object: any) {
+    return object as string[];
+  }
 }
+
