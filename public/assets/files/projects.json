@@ -33,6 +33,16 @@
                 "Leveraged Tkinter to create an interactive and visually appealing game interface.",
                 "Organized files and directories for clarity and ease of maintenance."
             ]
+        },
+        "images": {
+            "indexes": [
+                [1, 4], 
+                [5, 7]
+            ],
+            "descriptions": [
+                "A successful Minesweeper game showcasing flagged markers that update the dynamic bomb counter in the top right, a clear win state, and the final time displayed in the top left.",
+                "Demonstration of a Minesweeper game with unknown markers in use, leading to a lose state after uncovering a mine."
+            ]
         }
     }
 } 

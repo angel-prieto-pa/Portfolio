@@ -5,14 +5,9 @@
 
 
 <div class="modal-body mx-2">
-    <carousel>
-        <div *ngFor="let picture of project.pictures">
-            <slide><img src={{picture}} alt="slide" style="display: block; width: 100%"></slide>
-        </div>
-    </carousel>
 
     <!-- Description -->
-    <h3 class="my-4">Description</h3>
+    <h3 class="mb-4">Description</h3>
     <p>{{project.description}}</p>
 
     <!-- Key Features -->
@@ -44,10 +39,38 @@
                 <li><b>{{highlight}}: </b>{{project.highlightDescriptions[i]}}</li>
             </div>
         </ul>
-
     </div>
 
-    <!-- Github Link -->
+    <!-- Images -->
+    <h3 class="my-4">Images</h3>
+
+    @let indexList = project.info.images.indexes;
+    <div *ngFor="let indexSet of indexList; let i = index">
+        @let start = indexSet[0]; @let end = indexSet[1];
+        @let imageList = createImageList('minesweeper', start, end);
+
+        <div class="row" style="margin-left: auto; margin-right: auto;">
+
+            <!-- Seperator Between Carousels -->
+            <div *ngIf="i != 0">
+                <hr class="mt-3" style="width: 85%; margin-left: auto; margin-right: auto;">
+            </div>
+            
+            <!-- Carousel -->
+            <carousel [isAnimated]="true" style="width: 45%;">
+                <div *ngFor="let picture of imageList">
+                    <slide><img src={{picture}} alt="slide" style="display: block; width: 75%; margin-left: auto; margin-right: auto;"></slide>
+                </div>
+            </carousel>
+
+            <!-- Carousel Description -->
+            <p style="width: 45%; margin-top: auto; margin-bottom: auto;"><i>{{project.info.images.descriptions[i]}}</i></p>
+        </div>
+
+    </div>
+    
+    <!-- Link -->
+    <h3 class="my-4">Link</h3>
     <p class="my-4">Access this project on GitHub: <a href={{project.projectLink}} target="_blank">here</a></p>
 
     <hr>

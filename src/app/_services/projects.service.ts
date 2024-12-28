@@ -31,6 +31,7 @@ export class ProjectsService {
       featureDescriptions: projectData.minesweeper.features.descriptions,
       highlightHeadings: projectData.minesweeper.highlights.headings,
       highlightDescriptions: projectData.minesweeper.highlights.descriptions,
+      info: projectData.minesweeper,
       tags: [Tag.PYTHON]
     },
     // {id: 1, name: "Sample Angular App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Fullstack web app developed using Angular and Node.JS", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.NODEJS]},

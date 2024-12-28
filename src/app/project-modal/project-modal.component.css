@@ -1,3 +1,18 @@
 ul, li {
     margin: 5px;
 }
+
+.modal-header {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Darkens Carousel Indicators */
+::ng-deep .carousel-control-next-icon,
+::ng-deep .carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+::ng-deep .carousel-indicators {
+    filter: invert(1);
+  }

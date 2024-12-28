@@ -11,5 +11,6 @@ export interface Project {
     highlightHeadings: string[];
     highlightDescriptions: string[];
     pictures: string[];
+    info: any;
     tags: Tag[];
 }

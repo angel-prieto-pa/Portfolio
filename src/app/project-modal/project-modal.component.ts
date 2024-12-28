@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-project-modal',
   templateUrl: './project-modal.component.html',
-  styleUrl: './project-modal.component.css'
+  styleUrl: './project-modal.component.css',
 })
 
 export class ProjectModalComponent {
@@ -14,6 +14,18 @@ export class ProjectModalComponent {
   constructor(public bsModalRef: BsModalRef) {
 
   }
+
+  public createImageList(projectName: string, start: number, end: number): string[] {
+  
+      let dir = "/assets/img/" + projectName.toLowerCase() + "/";
+      let imgUrls: string[] = [];
+  
+      for (let i = start; i <= end; i++) {
+        imgUrls.push(dir + i.toString().padStart(2, "0") + "-" + projectName + ".png");
+      }
+  
+      return imgUrls;
+    }
 
   isArray(object: any) {
     return Array.isArray(object);
