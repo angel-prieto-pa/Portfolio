@@ -33,10 +33,10 @@ export class PortfolioComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.projects = this.projectService.GetProjects();
+    this.projects = this.projectService.getProjects();
   }
 
-  Filter() {
+  public filter() {
     let filterTags: Tag[] = [];
 
     if (this.typescript) {
@@ -73,10 +73,10 @@ export class PortfolioComponent implements OnInit{
       this.filtering = false;
     }
 
-    this.projects = this.projectService.GetProjectsByFilter(filterTags);
+    this.projects = this.projectService.getProjectsByFilter(filterTags);
   }
 
-  ResetFilters() {
+  public resetFilters() {
     this.typescript = false;
     this.javascript= false;
     this.python = false;
@@ -89,6 +89,6 @@ export class PortfolioComponent implements OnInit{
 
     this.filtering = false;
 
-    this.projects = this.projectService.GetProjects();
+    this.projects = this.projectService.getProjects();
   }
 }

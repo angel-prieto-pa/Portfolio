@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Project } from '../_models/Project';
+import { ProjectsService } from '../_services/projects.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -9,33 +10,20 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 
 export class ProjectModalComponent {
+
   project = {} as Project;
 
-  constructor(public bsModalRef: BsModalRef) {
+  constructor(public bsModalRef: BsModalRef, public projectService: ProjectsService) {}
 
-  }
-
-  public createImageList(projectName: string, start: number, end: number): string[] {
-  
-      let dir = "/assets/img/" + projectName.toLowerCase() + "/";
-      let imgUrls: string[] = [];
-  
-      for (let i = start; i <= end; i++) {
-        imgUrls.push(dir + i.toString().padStart(2, "0") + "-" + projectName + ".png");
-      }
-  
-      return imgUrls;
-    }
-
-  isArray(object: any) {
+  public isArray(object: any): boolean {
     return Array.isArray(object);
   }
 
-  isString(object: any) {
+  public isString(object: any): boolean {
     return (typeof object === 'string');
   }
 
-  toStringArray(object: any) {
+  public toStringArray(object: any): string[] {
     return object as string[];
   }
 }

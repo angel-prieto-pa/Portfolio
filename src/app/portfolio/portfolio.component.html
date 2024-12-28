@@ -4,7 +4,7 @@
     <div class="mb-2">
         <div>
             <button class="btn btn-outline-primary mb-2 me-2" (click)="isCollapsed = !isCollapsed">Filter</button>
-            <button class="btn btn-outline-secondary mb-2" (click)="ResetFilters()" [hidden]="!filtering">Reset</button>
+            <button class="btn btn-outline-secondary mb-2" (click)="resetFilters()" [hidden]="!filtering">Reset</button>
         </div>
 
         <div [collapse]="isCollapsed" [isAnimated]="true">
@@ -19,7 +19,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="typescript"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="TypeScript">
                                     <label class="form-check-label small">TypeScript</label>
                                 </div>
@@ -32,7 +32,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="javascript"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="JavaScript">
                                     <label class="form-check-label small">JavaScript</label>
                                 </div>
@@ -42,7 +42,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="python"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="Python">
                                     <label class="form-check-label small">Python</label>
                                 </div>
@@ -52,7 +52,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="csharp"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="CSharp">
                                     <label class="form-check-label small">C#</label>
                                 </div>
@@ -62,7 +62,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="java"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="Java">
                                     <label class="form-check-label small">Java</label>
                                 </div>
@@ -78,7 +78,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="angular"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="Angular">
                                     <label class="form-check-label small">Angular</label>
                                 </div>
@@ -88,7 +88,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="react"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="React">
                                     <label class="form-check-label small">React</label>
                                 </div>
@@ -98,7 +98,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="aspnet"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="ASPNet">
                                     <label class="form-check-label small">ASP.NET</label>
                                 </div>
@@ -108,7 +108,7 @@
                                         type="checkbox"
                                         class="form-check-input position-static me-2"
                                         [(ngModel)]="nodejs"
-                                        (change)="Filter()"
+                                        (change)="filter()"
                                         name="NodeJS">
                                     <label class="form-check-label small">Node.JS</label>
                                 </div>

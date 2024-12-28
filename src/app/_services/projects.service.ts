@@ -13,51 +13,34 @@ export class ProjectsService {
   title = 'JSONDataExample';
   products: any = (projectData as any).default;
 
-  constructor(){
-    console.log(projectData);
-  }
-
-  // constructor() {}
+  constructor() {}
   
   projects: Project[] = [
     { 
       id: 0,
-      name: "Minesweeper",
-      pictures: this.GetImages("minesweeper", 5),
-      projectLink: projectData.minesweeper.projectLink,
-      summary: projectData.minesweeper.summary,
-      description: projectData.minesweeper.description,
-      featureHeadings: projectData.minesweeper.features.headings,
-      featureDescriptions: projectData.minesweeper.features.descriptions,
-      highlightHeadings: projectData.minesweeper.highlights.headings,
-      highlightDescriptions: projectData.minesweeper.highlights.descriptions,
       info: projectData.minesweeper,
       tags: [Tag.PYTHON]
     },
-    // {id: 1, name: "Sample Angular App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Fullstack web app developed using Angular and Node.JS", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.ANGULAR, Tag.TYPESCRIPT, Tag.NODEJS]},
-    // {id: 2, name: "Sample .Net App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Fullstack web app developed using React and ASP.NET", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.REACT ,Tag.CSHARP, Tag.ASPNET]},
-    // {id: 3, name: "Web API Project", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Web API Project that was developed for a class project.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.CSHARP, Tag.ASPNET]},
-    // {id: 4, name: "Chrome Extension", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Developed a chrome extension that tracks the prices of furniture.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.JAVASCRIPT]},
-    // {id: 5, name: "Mobile App", pictures: ["/assets/Image1.jpg","/assets/Image2.jpg","/assets/Image3.jpg"], projectLink: "//www.github.com", summary: "Mobile app developed in java that tracks the departure and arrival of trains.", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", tags: [Tag.JAVA]}
   ];
 
-  private GetImages(projectName: string, count: number) : string[] {
-
+  public createImageList(projectName: string, start: number, end: number): string[] {
+    // Returns an image list based on the image file naming convention "##-project_name.png".
+  
     let dir = "/assets/img/" + projectName + "/";
     let imgUrls: string[] = [];
 
-    for (let i = 1; i < count; i++) {
+    for (let i = start; i <= end; i++) {
       imgUrls.push(dir + i.toString().padStart(2, "0") + "-" + projectName + ".png");
     }
 
     return imgUrls;
   }
 
-  GetProjects() {
+  public getProjects(): Project[] {
     return this.projects
   }
 
-  GetProjectsById(id: number) : Project {
+  public getProjectById(id: number): Project {
     let project = this.projects.find(project => project.id === id);
 
     if (project === undefined) {
@@ -67,7 +50,7 @@ export class ProjectsService {
     return project;
   }
 
-  GetProjectsByFilter(filterTags: Tag[]) {
+  public getProjectsByFilter(filterTags: Tag[]): Project[] {
     let filteredProjects: Project[] = [];
 
     this.projects.forEach(function (project) {

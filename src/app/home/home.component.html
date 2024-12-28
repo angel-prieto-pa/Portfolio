@@ -14,16 +14,16 @@
         <div class = "col-lg shadow border m-1">
             <div class = "text-center">
                 <h2><u>Featured Project</u></h2>
-                <h4 class="title-featured"><i>{{featuredProject.name}}</i></h4>
+                <h4 class="title-featured"><i>{{featuredProject.info.title}}</i></h4>
             </div>
 
-            <carousel>
-                <div *ngFor="let picture of featuredProject.pictures">
+            <carousel [isAnimated]="true">
+                <div *ngFor="let picture of this.projectService.createImageList(featuredProject.info.title | lowercase, 1, featuredProject.info.images.count)">
                     <slide class="image-featured"><img src={{picture}} alt="slide" style="display: block; width: 75%; margin-left: auto; margin-right: auto;"></slide>
                 </div>
             </carousel>
 
-            <p class="mt-2 text-center" style="margin-left: 20px; margin-right: 20px;">{{featuredProject.summary}}</p>
+            <p class="mt-2 text-center" style="margin-left: 20px; margin-right: 20px;">{{featuredProject.info.summary}}</p>
             <p class="text-center"><i>Learn more in the <a routerLink = "/portfolio">portfolio</a> section.</i></p>
         </div>
     </div>

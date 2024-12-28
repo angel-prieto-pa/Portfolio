@@ -1,8 +1,9 @@
 {
     "minesweeper": {
+        "title": "Minesweeper",
         "summary": "Python recreation of the classic Minesweeper game.",
         "description": "This project is a fully interactive recreation of the classic Minesweeper game, developed in Python. Designed to demonstrate expertise in Python programming, the project integrates game mechanics, logical algorithms, and user interface design.",
-        "projectLink": "https://github.com/angel-prieto-pa/Minesweeper",
+        "link": "https://github.com/angel-prieto-pa/Minesweeper",
         "features": {
             "headings": [
                 "Dynamic Gameplay Mechanics",
@@ -35,6 +36,7 @@
             ]
         },
         "images": {
+            "count": 7,
             "indexes": [
                 [1, 4], 
                 [5, 7]
